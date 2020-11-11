@@ -15,6 +15,7 @@
 		702B54A4255BA76300C3AC47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 702B54A2255BA76300C3AC47 /* LaunchScreen.storyboard */; };
 		702B54AF255BA76300C3AC47 /* HDogMLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B54AE255BA76300C3AC47 /* HDogMLTests.swift */; };
 		702B54BA255BA76300C3AC47 /* HDogMLUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702B54B9255BA76300C3AC47 /* HDogMLUITests.swift */; };
+		702B54CB255BA78200C3AC47 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 702B54CA255BA78200C3AC47 /* Inceptionv3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		702B54B5255BA76300C3AC47 /* HDogMLUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HDogMLUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		702B54B9255BA76300C3AC47 /* HDogMLUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDogMLUITests.swift; sourceTree = "<group>"; };
 		702B54BB255BA76300C3AC47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		702B54CA255BA78200C3AC47 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,11 @@
 		702B5496255BA76200C3AC47 /* HDogML */ = {
 			isa = PBXGroup;
 			children = (
+				702B54D1255BB41B00C3AC47 /* Model */,
+				702B54D0255BB41500C3AC47 /* View */,
+				702B54CF255BB40A00C3AC47 /* Controller */,
 				702B5497255BA76200C3AC47 /* AppDelegate.swift */,
 				702B5499255BA76200C3AC47 /* SceneDelegate.swift */,
-				702B549B255BA76200C3AC47 /* ViewController.swift */,
-				702B549D255BA76200C3AC47 /* Main.storyboard */,
 				702B54A0255BA76300C3AC47 /* Assets.xcassets */,
 				702B54A2255BA76300C3AC47 /* LaunchScreen.storyboard */,
 				702B54A5255BA76300C3AC47 /* Info.plist */,
@@ -126,6 +129,30 @@
 				702B54BB255BA76300C3AC47 /* Info.plist */,
 			);
 			path = HDogMLUITests;
+			sourceTree = "<group>";
+		};
+		702B54CF255BB40A00C3AC47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				702B549B255BA76200C3AC47 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		702B54D0255BB41500C3AC47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				702B549D255BA76200C3AC47 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		702B54D1255BB41B00C3AC47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				702B54CA255BA78200C3AC47 /* Inceptionv3.mlmodel */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				702B549C255BA76200C3AC47 /* ViewController.swift in Sources */,
+				702B54CB255BA78200C3AC47 /* Inceptionv3.mlmodel in Sources */,
 				702B5498255BA76200C3AC47 /* AppDelegate.swift in Sources */,
 				702B549A255BA76200C3AC47 /* SceneDelegate.swift in Sources */,
 			);
