@@ -28,16 +28,23 @@ class ViewController: UIViewController {
     }
     
     func detect(image: CIImage){
-        /// create a model object from the CoreML model
+        /// create a model object from the CoreML model (load model)
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
              fatalError("Unable to find CoreML's model")
         }
-        /// An image analysis request that uses a Core ML model to process images.
+        /// Create a request that ask the model to classify the image we passed in
         let request = VNCoreMLRequest(model: model) { (request, error) in
             guard let results = request.results as? [VNClassificationObservation] else {
                 fatalError("Model failed to process image")
             }
-            print(results)
+            if let firstResult = results.first{
+                if firstResult.identifier.contains("hotdog") {
+                    self.navigationItem.title = "Hotdog!"
+                }else{
+                    self.navigationItem.title = "Not Hotdog!"
+                }
+            }
+            //print(results)
         }
         /// tell the CoreML that we want to use this image
         let handler = VNImageRequestHandler(ciImage: image)
@@ -54,7 +61,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
-    // What to do with image that user has picked
+    /// What to do with image that user has picked
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -67,6 +74,5 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         imagePicker.dismiss(animated: true, completion: nil)
     }
-    
 }
 

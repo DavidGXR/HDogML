@@ -31,6 +31,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7Pa-3G-I5p">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="C91-rY-unN">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="cameraTapped:" destination="BYZ-38-t0r" id="eE6-N9-Ihb"/>
                             </connections>
