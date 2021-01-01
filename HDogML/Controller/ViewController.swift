@@ -12,7 +12,8 @@ import Vision
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    
+    @IBOutlet weak var indicatorImage: UIImageView!
+
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -39,12 +40,11 @@ class ViewController: UIViewController {
             }
             if let firstResult = results.first{
                 if firstResult.identifier.contains("hotdog") {
-                    self.navigationItem.title = "Hotdog!"
+                    self.indicatorImage.image = UIImage(named: "Hotdog")
                 }else{
-                    self.navigationItem.title = "Not Hotdog!"
+                    self.indicatorImage.image = UIImage(named: "NotHotdog")
                 }
             }
-            //print(results)
         }
         /// tell the CoreML that we want to use this image
         let handler = VNImageRequestHandler(ciImage: image)

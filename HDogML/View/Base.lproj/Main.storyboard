@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z0N-2C-9D5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z0N-2C-9D5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,17 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJ1-nW-OM9">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qRx-Yk-gh1">
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W3Y-8a-7Uc">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJ1-nW-OM9">
+                                        <rect key="frame" x="0.0" y="112" width="414" height="696"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="GJ1-nW-OM9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="27d-fJ-b3x"/>
-                            <constraint firstItem="GJ1-nW-OM9" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="500-px-ToU"/>
-                            <constraint firstAttribute="bottom" secondItem="GJ1-nW-OM9" secondAttribute="bottom" id="GEX-g5-wAp"/>
-                            <constraint firstItem="GJ1-nW-OM9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hfw-qZ-5ZV"/>
+                            <constraint firstItem="qRx-Yk-gh1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="MYy-z9-KMk"/>
+                            <constraint firstItem="qRx-Yk-gh1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nz2-Ly-6cQ"/>
+                            <constraint firstItem="W3Y-8a-7Uc" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.116027" id="O0z-Qc-ee8"/>
+                            <constraint firstItem="qRx-Yk-gh1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q31-Jz-Eeq"/>
+                            <constraint firstAttribute="bottom" secondItem="qRx-Yk-gh1" secondAttribute="bottom" id="nm4-cj-2rE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7Pa-3G-I5p">
@@ -39,6 +48,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="GJ1-nW-OM9" id="Luv-oT-rlR"/>
+                        <outlet property="indicatorImage" destination="W3Y-8a-7Uc" id="wRn-b4-NrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
