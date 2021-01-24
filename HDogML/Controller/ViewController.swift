@@ -29,11 +29,11 @@ class ViewController: UIViewController {
     }
     
     func detect(image: CIImage){
-        /// create a model object from the CoreML model (load model)
+        // create a model object from the CoreML model (load model)
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
              fatalError("Unable to find CoreML's model")
         }
-        /// Create a request that ask the model to classify the image we passed in
+        // Create a request that ask the model to classify the image we passed in
         let request = VNCoreMLRequest(model: model) { (request, error) in
             guard let results = request.results as? [VNClassificationObservation] else {
                 fatalError("Model failed to process image")
@@ -46,10 +46,10 @@ class ViewController: UIViewController {
                 }
             }
         }
-        /// tell the CoreML that we want to use this image
+        // tell the CoreML that we want to use this image
         let handler = VNImageRequestHandler(ciImage: image)
         
-        /// perform request
+        // perform request
         do{
             try handler.perform([request])
         }catch{
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         }
     }
 
-} /// End of class
+} // End of class
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
@@ -66,7 +66,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         if let userPickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             imageView.image = userPickedImage
-            /// convert UIImage to CIImage which can be understood by CoreML engine
+            // convert UIImage to CIImage which can be understood by CoreML engine
             guard let ciImage = CIImage(image: userPickedImage) else {
                 fatalError("Unable to convert UIImage to CIImage")
             }
